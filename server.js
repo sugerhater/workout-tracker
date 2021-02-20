@@ -1,15 +1,30 @@
 const express = require('express');
 const mongoose = require("mongoose");
 
+const app = express();
 const PORT = process.env.PORT ||3000;
 
-const db = require("./models");
+var compression = require('compression')
 
-const app = express();
+// compress all responses
+app.use(compression());
+// const db = require("./models");
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populate", { useNewUrlParser: true });
+require("./routes/html-routes.js")(app);
+// require("./routes/api-routes.js")(app);
+
+app.get('*', function (req, res) {
+  res.send('Page not found', 404);
+});
+
+app.listen(PORT, function(){
+  console.log("app listening on PORT " +PORT)
+})
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populate", { useNewUrlParser: true });
