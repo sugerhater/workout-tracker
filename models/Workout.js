@@ -18,11 +18,12 @@ const Schema = mongoose.Schema;
 const WorkoutSchema = new Schema ({
   id:{
     type:Number,
-    unite:true
+    unite:true,
+    trim:true
   },
 
   exercises:[{
-    type:Object
+    type:Object//or nothing here
   }]
 });
 
