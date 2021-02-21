@@ -15,18 +15,33 @@ const Schema = mongoose.Schema;
 //   ]
 // });
 
-const WorkoutSchema = new Schema ({
-  id:{
-    type:Number,
-    unite:true,
-    trim:true
+const WorkoutSchema = new Schema({
+  date: {
+    type: Date,
+    default: Date.now
   },
 
-  exercises:[{
-    type:Object//or nothing here
+  // totalDuration:{
+  //   default:addDuration()
+  // },
+
+  exercises: [{
+    type: Object//or nothing here
   }]
 });
 
-const Workout = mongoose.model("Workout",WorkoutSchema);
+WorkoutSchema.methods.totalDuration = function(){
+  console.log("totalDuration method is called");
+  // this.total;
+  this.total = this.exercises.forEach(exercise => { 
+    this.total += exercise.duration
+  });
+  console.log(this.total);
+  return this.total;
+}
+
+
+const Workout = mongoose.model("Workout", WorkoutSchema);
+
 
 module.exports = Workout;
