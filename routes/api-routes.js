@@ -21,7 +21,7 @@ module.exports = function(app) {
 
     console.log("adding exercise");
     const id = req.params.id;
-    db.Workout.update({
+    db.Workout.updateOne({
       _id:mongojs.ObjectId(req.params.id)
     },{
       //use push AND set?
@@ -38,14 +38,14 @@ module.exports = function(app) {
   //API.getLastWorkout
   app.get('/api/workouts', async (req,res)=>{
       console.log("/api/workouts get routes is called")
-      const result = await db.workouts.find({});
+      const result = await db.Workout.find({});
       res.json(result);
   });
 
   //API.getWorkoutsInRange
-  app.get('/api/workouts/range',(req,res)=>{
-
+  app.get('/api/workouts/range',async  (req,res)=>{
+    const result = await db.Workout.find({});
+    res.json(result);
   })
-
 
 }
