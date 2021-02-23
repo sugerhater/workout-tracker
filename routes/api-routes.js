@@ -40,11 +40,14 @@ module.exports = function(app) {
       console.log("/api/workouts get routes is called")
       const result = await db.Workout.find({});
       res.json(result);
+      // let lastwork = result[result.length -1];
+      // lastwork[totalDuration] = lastwork.totalDuration();
+      // res.json(lastwork);
   });
 
   //API.getWorkoutsInRange
   app.get('/api/workouts/range',async  (req,res)=>{
-    const result = await db.Workout.find({});
+    const result = await db.Workout.find().sort({_id:-1}).limit(7);
     res.json(result);
   })
 
