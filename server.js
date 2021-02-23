@@ -23,6 +23,8 @@ app.get('*', function (req, res) {
   res.send('Page not found', 404);
 });
 
+console.log(process.env.MONGODB_URI);
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
   
     useNewUrlParser: true,
