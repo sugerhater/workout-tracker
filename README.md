@@ -11,6 +11,8 @@
 
 ## Description 
 This repo is the for homework of MongoDB week. The app is deployed through [Heroku](www.heroku.com/) with MongoDB Atlas. Users can create new workouts and add exercises for each workouts.
+![homework17](https://user-images.githubusercontent.com/71996574/108947351-4d286c00-762e-11eb-96d5-b0208cb2814d.gif)
+
 
 ## Installation & Usage
 To run on local:
