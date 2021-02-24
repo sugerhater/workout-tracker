@@ -19,3 +19,11 @@ To run on local:
   - rur `npm seed` to run the seed.js
   - run `node server.js` to start the app
   - Open your browser and to go `http://localhost:3000`
+
+## Questions
+Find me on GitHub: [sugarhater](https://github.com/sugarhater)
+✉️Email me with any questions: kehong0926@gmail.com
+
+## Contributing
+:octocat: [Kehong Li](https://github.com/sugarhater).
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
