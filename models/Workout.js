@@ -8,23 +8,25 @@ const WorkoutSchema = new Schema({
     default: Date.now
   },
 
-  exercises: [{
-    type: {
-      type: String,
-      trim: true,
-      required: "Please enter the type of exercise!"
-    },
-    name: {
-      type: String,
-      trim: true,
-      required: "Please enter the name of the exercise!"
-    },
-    duration: {
-      type: Number,
-      trim: true,
-      required: "Please enter the duration of your exercise!"
-    }
-  }]
+  exercises: [
+  //   {
+  //   type: {
+  //     type: String,
+  //     trim: true,
+  //     required: "Please enter the type of exercise!"
+  //   },
+  //   name: {
+  //     type: String,
+  //     trim: true,
+  //     required: "Please enter the name of the exercise!"
+  //   },
+  //   duration: {
+  //     type: Number,
+  //     trim: true,
+  //     required: "Please enter the duration of your exercise!"
+  //   }
+  // }
+]
 
 },
   {
